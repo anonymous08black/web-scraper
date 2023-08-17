@@ -147,7 +147,8 @@ data = pd.read_csv("all_items.csv")
 data['title'] = data['title'] + " " + data["colour"].astype(str)
 data = data.drop(['Unnamed: 0', 'id', 'colour'], axis = 1)
 data = data.fillna(" ")
-print(data)
+file_name = f"data/{date.today()}all_items.csv"
+all_items.to_csv(file_name, index=False)
 
 # files.download("women_dresses.csv")
 
